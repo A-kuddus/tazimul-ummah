@@ -40,6 +40,9 @@
 			<link rel="stylesheet" id="elementor-post-3241-css" href="post-3241.css" media="all">
 			<link rel="stylesheet" id="exad-pro-main-style-css" href="frontend.min.css" media="all">
 			<link rel="stylesheet" id="exad-pro-main-style-css" href="stylenext.css" media="all">	
+			
+			<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    
 			<style>
 				body {
 						width:100%;
@@ -214,6 +217,57 @@
 			<link rel="stylesheet" href="stylenext.css">
 		</head>
 	    <body style="margin-top:0px" >
+			<div class="popup" onclick="popupclick()">
+				<div class="black_overlay"></div>
+					<div class="content_overlay">
+						<div class="cur_content_block">
+							<input type="hidden" id="counter" value="5">
+								<span class="close_block float-right">
+									<b style="color:white; font-size:14px;" class="close"><span>X</span></b>
+								</span>
+							<div class="popup_img" style="text-align:center">
+								 <p><img alt="" src=".\images\cover.JPG" style="width:550px;border-radius: 5px;" /></p>
+							</div>
+						</div>
+					</div>
+			</div>
+            
+            <script>
+                function popupclick() {
+                    $('.popup').hide();
+                }
+                $(window).on('load', function() {
+                    $('.close').click(function(event) {
+                        $('.popup').hide();
+                    })
+                  
+                    $('.black_overlay').click(function(event) {
+                        $('.popup').hide();
+                    })
+            
+                    $('.hover_bkgr_fricc').show();
+                    // });
+                    $('.hover_bkgr_fricc').click(function() {
+                        $('.hover_bkgr_fricc').hide();
+                    });
+                    $('.popupCloseButton').click(function() {
+                        $('.hover_bkgr_fricc').hide();
+                    });
+                  
+                    function countdown() {
+                        var i = document.getElementById('counter').value;
+                        var j = i - 1;
+                        document.getElementById('counter').value = j;
+                        if (j <= 0) {
+                            $('.popup').hide();
+                        }
+                    }
+                    setInterval(function() {
+                        countdown();
+                    }, 1000);
+                });
+            </script>
+					
 				<section class="section_1">
 					<div  class="container  card main_website" style="width:98%;padding-top:10px">
 						<div style="background-color:#194926;" class="row">
@@ -289,7 +343,6 @@
 						</div>
 
 
-					
 					<!----------__________slider start___________------------>	
 					
 								
